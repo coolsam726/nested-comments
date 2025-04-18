@@ -3,7 +3,6 @@
 namespace Coolsam\NestedComments;
 
 use Filament\AvatarProviders\UiAvatarsProvider;
-use Filament\Facades\Filament;
 use Filament\Support\Facades\FilamentColor;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

@@ -30,6 +30,7 @@ class Comment extends Model
         if ($this->user) {
             return call_user_func(config('nested-comments.closures.getUserNameUsing'), $this->user);
         }
+
         return $this->getAttribute('guest_name');
     }
 

@@ -80,6 +80,7 @@ class AddComment extends Component implements HasForms
     public function render(): View
     {
         $namespace = NestedCommentsServiceProvider::$viewNamespace;
+
         return view("$namespace::livewire.add-comment");
     }
 
