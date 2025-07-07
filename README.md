@@ -379,6 +379,61 @@ return [
     '😡',
 ];
 ```
+
+### Customize Slide-over dialog
+You can customize the display of slide-over dialog by changing many parameters in config file.
+
+#### Customize display created date of comment
+Set as your preference the display format created date below username of a comment
+```php
+'format-created-date' => 'F j Y h:i:s A',
+```
+
+#### Showing Header Section
+Show the title section
+```php
+'show-heading' => true,
+```
+Show the refresh button
+```php
+'show-refresh-button' => true,
+```
+> [!NOTE]  
+> Combining `'show-heading' => false` with `'show-refresh-button' => false` remove header's section completely.
+
+
+#### Customization Badge Counter
+Show the badge counter
+```php
+'show-badge-counter' => true,
+```
+Customize color
+```php
+'badge-counter-color' => 'info',
+// 'danger', 'gray', 'info', 'success' or 'warning'
+```
+
+#### Customization Refresh button
+Customize trigger style
+```php
+'style-refresh-button' => 'button', 
+// 'button' or 'icon',
+```
+Customize icon
+```php
+'icon-refresh-button' => 'heroicon-m-sparkles',
+```
+
+Customize color
+```php
+'color-refresh-button' => 'info', 
+// 'danger', 'gray', 'info', 'success' or 'warning'
+```
+
+Outlined button style
+```php
+'outlined-refresh-button' => false,
+```
 ## Testing
 
 ```bash
