@@ -1,9 +1,9 @@
 <?php
 
-namespace Coolsam\NestedComments\Concerns;
+namespace Hadialharbi\NestedComments\Concerns;
 
-use Coolsam\NestedComments\Models\Reaction;
-use Coolsam\NestedComments\NestedComments;
+use Hadialharbi\NestedComments\Models\Reaction;
+use Hadialharbi\NestedComments\NestedComments;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;

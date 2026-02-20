@@ -1,6 +1,13 @@
 @import '../../vendor/filament/filament/resources/css/theme.css';
 @import '../../vendor/awcodes/filament-tiptap-editor/resources/css/plugin.css';
 
-.comment-mention, [data-mention-id] {
-    @apply bg-primary-50 !text-primary-500 dark:bg-gray-700 dark:text-primary-50 dark:border-primary-500 p-1 rounded-full px-2 before:content-["@"];
+.comment-mention:dir(rtl),
+[data-mention-id]:dir(rtl) {
+    @apply rounded-full p-1 px-2 text-primary-500 bg-primary-50 dark:bg-gray-700 dark:text-primary-50 dark:border-primary-500;
+    direction: rtl;
+}
+
+.comment-mention:dir(rtl)::before,
+[data-mention-id]:dir(rtl)::before {
+    content: "@"; /* أو "@" بالعربي إذا حبيت */
 }

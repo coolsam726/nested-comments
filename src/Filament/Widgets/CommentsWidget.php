@@ -1,6 +1,6 @@
 <?php
 
-namespace Coolsam\NestedComments\Filament\Widgets;
+namespace Hadialharbi\NestedComments\Filament\Widgets;
 
 use Filament\Widgets\Widget;
 use Illuminate\Database\Eloquent\Model;

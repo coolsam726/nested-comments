@@ -1,6 +1,6 @@
 <?php
 
-namespace Coolsam\NestedComments;
+namespace Hadialharbi\NestedComments;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;

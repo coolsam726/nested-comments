@@ -1,6 +1,6 @@
 <?php
 
-namespace Coolsam\NestedComments\Livewire;
+namespace Hadialharbi\NestedComments\Livewire;
 
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;

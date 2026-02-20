@@ -1,6 +1,6 @@
 <?php
 
-namespace Coolsam\NestedComments\Database\Factories;
+namespace Hadialharbi\NestedComments\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

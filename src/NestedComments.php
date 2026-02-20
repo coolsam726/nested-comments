@@ -1,6 +1,6 @@
 <?php
 
-namespace Coolsam\NestedComments;
+namespace Hadialharbi\NestedComments;
 
 use Filament\AvatarProviders\UiAvatarsProvider;
 use Filament\Support\Facades\FilamentColor;

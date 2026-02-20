@@ -1,10 +1,10 @@
 <?php
 
-namespace Coolsam\NestedComments\Filament\Infolists;
+namespace Hadialharbi\NestedComments\Filament\Infolists;
 
 use Closure;
-use Coolsam\NestedComments\Models\Comment;
-use Coolsam\NestedComments\NestedComments;
+use Hadialharbi\NestedComments\Models\Comment;
+use Hadialharbi\NestedComments\NestedComments;
 use Filament\Infolists\Components\Entry;
 use Illuminate\Database\Eloquent\Model;
 

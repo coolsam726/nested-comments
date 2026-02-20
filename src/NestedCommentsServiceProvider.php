@@ -1,26 +1,26 @@
 <?php
 
-namespace Coolsam\NestedComments;
+namespace Hadialharbi\NestedComments;
 
-use Coolsam\NestedComments\Commands\NestedCommentsCommand;
-use Coolsam\NestedComments\Filament\Widgets\CommentsWidget;
-use Coolsam\NestedComments\Http\Middleware\GuestCommentatorMiddleware;
-use Coolsam\NestedComments\Livewire\AddComment;
-use Coolsam\NestedComments\Livewire\CommentCard;
-use Coolsam\NestedComments\Livewire\Comments;
-use Coolsam\NestedComments\Livewire\ReactionPanel;
-use Coolsam\NestedComments\Testing\TestsNestedComments;
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
+use Hadialharbi\NestedComments\Commands\NestedCommentsCommand;
+use Hadialharbi\NestedComments\Filament\Widgets\CommentsWidget;
+use Hadialharbi\NestedComments\Http\Middleware\GuestCommentatorMiddleware;
+use Hadialharbi\NestedComments\Livewire\AddComment;
+use Hadialharbi\NestedComments\Livewire\CommentCard;
+use Hadialharbi\NestedComments\Livewire\Comments;
+use Hadialharbi\NestedComments\Livewire\ReactionPanel;
+use Hadialharbi\NestedComments\Testing\TestsNestedComments;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Artisan;
 use Livewire\Features\SupportTesting\Testable;
-use Livewire\Livewire;
+// use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -61,10 +61,10 @@ class NestedCommentsServiceProvider extends PackageServiceProvider
 
                         $forceAssets = confirm(__('Do you want to override existing assets with new assets? (important if you are doing an upgrade)'), true);
                         if ($forceAssets) {
-                            // Delete the existing assets in public/css/coolsam and public/js/coolsam
+                            // Delete the existing assets in public/css/hadialharbi and public/js/hadialharbi
                             $filesystem = app(Filesystem::class);
-                            $filesystem->deleteDirectory(public_path('css/coolsam/nested-comments'));
-                            $filesystem->deleteDirectory(public_path('js/coolsam/nested-comments'));
+                            $filesystem->deleteDirectory(public_path('css/hadialharbi/nested-comments'));
+                            $filesystem->deleteDirectory(public_path('js/hadialharbi/nested-comments'));
                             Artisan::call('filament:assets');
                         }
                     })
@@ -72,7 +72,7 @@ class NestedCommentsServiceProvider extends PackageServiceProvider
                     ->publishAssets()
                     ->publishMigrations()
                     ->askToRunMigrations()
-                    ->askToStarRepoOnGitHub('coolsam/nested-comments');
+                    ->askToStarRepoOnGitHub('hadialharbi/nested-comments');
             });
 
         $configFileName = $package->shortName();
@@ -140,7 +140,7 @@ class NestedCommentsServiceProvider extends PackageServiceProvider
 
     protected function getAssetPackageName(): ?string
     {
-        return 'coolsam/nested-comments';
+        return 'hadialharbi/nested-comments';
     }
 
     /**
@@ -216,15 +216,19 @@ class NestedCommentsServiceProvider extends PackageServiceProvider
         }
     }
 
-    protected function registerLivewireComponents()
+    protected function registerLivewireComponents(): void
     {
-        $namespace = static::$viewNamespace;
-        $components = $this->getLivewireComponents();
-        if (empty($components)) {
+        if (! class_exists(\Livewire\Livewire::class)) {
             return;
         }
+
+        $namespace = static::$viewNamespace;
+        $components = $this->getLivewireComponents();
+
         foreach ($components as $name => $component) {
-            Livewire::component("$namespace::$name", $component);
+            // if (class_exists($component)) {
+            \Livewire\Livewire::component("$namespace::$name", $component);
+            // }
         }
     }
 

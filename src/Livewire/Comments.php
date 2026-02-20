@@ -1,11 +1,11 @@
 <?php
 
-namespace Coolsam\NestedComments\Livewire;
+namespace Hadialharbi\NestedComments\Livewire;
 
-use Coolsam\NestedComments\Concerns\HasComments;
-use Coolsam\NestedComments\Models\Comment;
-use Coolsam\NestedComments\NestedComments;
-use Coolsam\NestedComments\NestedCommentsServiceProvider;
+use Hadialharbi\NestedComments\Concerns\HasComments;
+use Hadialharbi\NestedComments\Models\Comment;
+use Hadialharbi\NestedComments\NestedComments;
+use Hadialharbi\NestedComments\NestedCommentsServiceProvider;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Livewire\Component;

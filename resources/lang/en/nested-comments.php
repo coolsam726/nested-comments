@@ -1,6 +1,6 @@
 <?php
 
-// translations for Coolsam/NestedComments
+// translations for Hadialharbi/NestedComments
 return [
     'comments' => [
         'general' => [
@@ -30,27 +30,27 @@ return [
                 'reply' => 'Reply',
                 'hide_replies' => 'Hide Replies',
                 'refresh' => 'Refresh',
-            ]
+            ],
         ],
         'table' => [
             'actions' => [
                 'view_comments' => [
-                    //'label' => 'View comment',
+                    // 'label' => 'View comment',
                     'heading' => 'Comments',
-                    'close' => 'Close'
-                ]
+                    'close' => 'Close',
+                ],
             ],
         ],
         'actions' => [
             'view_comment' => [
-                //'label' => 'View comment',
+                // 'label' => 'View comment',
                 'heading' => 'View Comments',
-                'close' => 'Close'
-            ]
-        ]
+                'close' => 'Close',
+            ],
+        ],
     ],
     'reactions' => [
         'add_reaction' => 'Add a reaction',
-    ]
+    ],
 
 ];

@@ -1,6 +1,6 @@
 <?php
 
-namespace Coolsam\NestedComments\Models;
+namespace Hadialharbi\NestedComments\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

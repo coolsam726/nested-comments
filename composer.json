@@ -1,57 +1,67 @@
 {
-    "name": "coolsam/nested-comments",
-    "description": "Add Nested comments/replies to filament forms, infolists and resources",
+    "name": "hadialharbi/nested-comments",
+    "description": "Fork of coolsam/nested-comments with Arabic RTL support and Filament integration",
     "keywords": [
-        "coolsam",
+        "nested-comments",
         "laravel",
-        "nested-comments"
+        "filamentphp",
+        "livewire",
+        "rtl",
+        "arabic",
+        "comments"
     ],
-    "homepage": "https://github.com/coolsam/nested-comments",
+    "homepage": "https://github.com/hadialharbi2020/nested-comments",
     "support": {
-        "issues": "https://github.com/coolsam/nested-comments/issues",
-        "source": "https://github.com/coolsam/nested-comments"
+        "issues": "https://github.com/hadialharbi2020/nested-comments/issues",
+        "source": "https://github.com/hadialharbi2020/nested-comments"
     },
     "license": "MIT",
     "authors": [
-        {
-            "name": "Sam Maosa",
-            "email": "maosa.sam@gmail.com",
-            "role": "Developer"
-        }
-    ],
+    {
+        "name": "Hadi Al-Harbi",
+        "email": "hadionline1994@gmail.com",
+        "role": "Maintainer"
+    },
+    {
+        "name": "Sam Maosa",
+        "email": "maosa.sam@gmail.com",
+        "role": "Original Developer"
+    }
+],
     "require": {
         "php": "^8.2",
         "awcodes/filament-tiptap-editor": "^3.5.12",
         "filament/filament": "^3.2",
-        "kalnoy/nestedset": "^6.0.5",
+        "illuminate/translation": "*",
+        "kalnoy/nestedset": "^6.0",
         "spatie/laravel-package-tools": "^1.15.0",
         "tangodev-it/filament-emoji-picker": "^1.0.3"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.5",
         "laravel/pint": "^1.0",
+        "livewire/livewire": "^3.6",
         "nunomaduro/larastan": "^3.1.0",
-        "orchestra/testbench": "^9.12",
-        "pestphp/pest-plugin-laravel": "^3.1",
+        "orchestra/testbench": "^10.4",
         "pestphp/pest-plugin-livewire": "^3.0",
         "phpstan/extension-installer": "^1.4.3",
         "spatie/laravel-ray": "^1.39"
     },
     "autoload": {
         "psr-4": {
-            "Coolsam\\NestedComments\\": "src/",
-            "Coolsam\\NestedComments\\Database\\Factories\\": "database/factories/"
+            "Hadialharbi\\NestedComments\\": "src/",
+            "Hadialharbi\\NestedComments\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Coolsam\\NestedComments\\Tests\\": "tests/"
+            "Hadialharbi\\NestedComments\\Tests\\": "tests/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
         "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
+        "test": "phpunit",
         "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint"
     },
@@ -65,10 +75,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Coolsam\\NestedComments\\NestedCommentsServiceProvider"
+                "Hadialharbi\\NestedComments\\NestedCommentsServiceProvider"
             ],
             "aliases": {
-                "NestedComments": "Coolsam\\NestedComments\\Facades\\NestedComments"
+                "NestedComments": "Hadialharbi\\NestedComments\\Facades\\NestedComments"
             }
         }
     },

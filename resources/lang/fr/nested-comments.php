@@ -1,6 +1,6 @@
 <?php
 
-// translations for Coolsam/NestedComments
+// translations for Hadialharbi/NestedComments
 return [
     'comments' => [
         'general' => [
@@ -17,7 +17,7 @@ return [
             'field' => [
                 'comment' => [
                     'label' => '',
-                    //'label' => 'Votre Commentaire',
+                    // 'label' => 'Votre Commentaire',
                     'mention_items_placeholder' => 'Rechercher les utilisateurs par nom ou email',
                     'empty_mention_items_message' => 'Aucun utilisateur trouvé',
 
@@ -31,25 +31,25 @@ return [
                 'reply' => 'Répondre',
                 'hide_replies' => 'Cacher les réponses',
                 'refresh' => 'Rafraîchir',
-            ]
+            ],
         ],
         'table' => [
             'actions' => [
                 'view_comments' => [
                     'heading' => 'Commentaires',
-                    'close' => 'Fermer'
-                ]
+                    'close' => 'Fermer',
+                ],
             ],
         ],
         'actions' => [
             'view_comment' => [
                 'heading' => 'Voir les Commentaires',
-                'close' => 'Fermer'
-            ]
-        ]
+                'close' => 'Fermer',
+            ],
+        ],
     ],
     'reactions' => [
         'add_reaction' => 'Ajouter une réaction',
-    ]
+    ],
 
 ];

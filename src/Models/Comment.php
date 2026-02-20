@@ -1,8 +1,8 @@
 <?php
 
-namespace Coolsam\NestedComments\Models;
+namespace Hadialharbi\NestedComments\Models;
 
-use Coolsam\NestedComments\Concerns\HasReactions;
+use Hadialharbi\NestedComments\Concerns\HasReactions;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;

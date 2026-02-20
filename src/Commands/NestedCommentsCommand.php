@@ -1,6 +1,6 @@
 <?php
 
-namespace Coolsam\NestedComments\Commands;
+namespace Hadialharbi\NestedComments\Commands;
 
 use Illuminate\Console\Command;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Coolsam\NestedComments\Concerns;
+namespace Hadialharbi\NestedComments\Concerns;
 
-use Coolsam\NestedComments\Models\Comment;
-use Coolsam\NestedComments\NestedComments;
+use Hadialharbi\NestedComments\Models\Comment;
+use Hadialharbi\NestedComments\NestedComments;
 use Exception;
 use FilamentTiptapEditor\Data\MentionItem;
 use Illuminate\Contracts\Auth\Authenticatable;

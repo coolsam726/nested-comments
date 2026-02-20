@@ -1,6 +1,6 @@
 <?php
 
-namespace Coolsam\NestedComments\Filament\Infolists;
+namespace Hadialharbi\NestedComments\Filament\Infolists;
 
 use Filament\Infolists\Components\Entry;
 

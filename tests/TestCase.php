@@ -1,60 +1,55 @@
 <?php
 
-namespace Coolsam\NestedComments\Tests;
+namespace Hadialharbi\NestedComments\Tests;
 
-use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
-use BladeUI\Icons\BladeIconsServiceProvider;
-use Coolsam\NestedComments\NestedCommentsServiceProvider;
-use Filament\Actions\ActionsServiceProvider;
-use Filament\FilamentServiceProvider;
-use Filament\Forms\FormsServiceProvider;
-use Filament\Infolists\InfolistsServiceProvider;
-use Filament\Notifications\NotificationsServiceProvider;
-use Filament\Support\SupportServiceProvider;
-use Filament\Tables\TablesServiceProvider;
-use Filament\Widgets\WidgetsServiceProvider;
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Hadialharbi\NestedComments\NestedCommentsServiceProvider;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+use Kalnoy\Nestedset\NestedSetServiceProvider;
 use Livewire\LivewireServiceProvider;
-use Orchestra\Testbench\TestCase as Orchestra;
-use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
+use Orchestra\Testbench\TestCase as BaseTestCase;
 
-class TestCase extends Orchestra
+abstract class TestCase extends BaseTestCase
 {
     protected function setUp(): void
     {
         parent::setUp();
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Coolsam\\NestedComments\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
-        );
+        // 👇 هذا هو المهم لتفعيل المايغريشن
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+
+        // لو عندك جدول users ضروري تنشئه هنا مؤقتًا:
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email')->nullable();
+            $table->timestamps();
+        });
     }
 
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
-            ActionsServiceProvider::class,
-            BladeCaptureDirectiveServiceProvider::class,
-            BladeHeroiconsServiceProvider::class,
-            BladeIconsServiceProvider::class,
-            FilamentServiceProvider::class,
-            FormsServiceProvider::class,
-            InfolistsServiceProvider::class,
-            LivewireServiceProvider::class,
-            NotificationsServiceProvider::class,
-            SupportServiceProvider::class,
-            TablesServiceProvider::class,
-            WidgetsServiceProvider::class,
+            LivewireServiceProvider::class, // ✅ أضف هذه السطر
+            \Illuminate\Translation\TranslationServiceProvider::class,
             NestedCommentsServiceProvider::class,
+            NestedSetServiceProvider::class, // أضف هذا السطر
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    protected function defineEnvironment($app)
     {
-        config()->set('database.default', 'testing');
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_nested-comments_table.php.stub';
-        $migration->up();
-        */
+        $app['config']->set('app.locale', 'ar');
+        $app['config']->set('app.fallback_locale', 'en');
+        $app['config']->set('database.default', 'testing');
+        $app['config']->set('database.connections.testing', [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+            'prefix' => '',
+        ]);
+
+        // 👇 لو عندك config خاص بالحزمة
+        $app['config']->set('nested-comments.tables.users', 'users');
     }
 }

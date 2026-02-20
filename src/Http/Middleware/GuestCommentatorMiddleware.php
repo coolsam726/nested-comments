@@ -1,9 +1,9 @@
 <?php
 
-namespace Coolsam\NestedComments\Http\Middleware;
+namespace Hadialharbi\NestedComments\Http\Middleware;
 
 use Closure;
-use Coolsam\NestedComments\NestedComments;
+use Hadialharbi\NestedComments\NestedComments;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 

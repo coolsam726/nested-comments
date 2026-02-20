@@ -1,6 +1,6 @@
 <?php
 
-namespace Coolsam\NestedComments\Testing;
+namespace Hadialharbi\NestedComments\Testing;
 
 use Livewire\Features\SupportTesting\Testable;
 
